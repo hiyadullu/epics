@@ -1,0 +1,368 @@
+/* Mobile Responsive Styles */
+
+/* Tablet and Mobile */
+@media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .sidebar-toggle {
+        display: block !important;
+    }
+    
+    .top-nav {
+        display: none;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* Landing Page Mobile */
+    .container {
+        padding: 15px;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .cute-character {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .welcome-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .welcome-section p {
+        font-size: 1rem;
+    }
+    
+    .action-buttons {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    .features-preview {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .feature-card {
+        min-width: auto;
+    }
+    
+    /* Dashboard Mobile */
+    .sidebar {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .top-header {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .user-avatar {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .dashboard-main {
+        padding: 20px 15px;
+    }
+    
+    .welcome-banner h1 {
+        font-size: 1.8rem;
+    }
+    
+    .welcome-banner p {
+        font-size: 1rem;
+    }
+    
+    /* Recording Section Mobile */
+    .recording-section {
+        flex-direction: column;
+        gap: 30px;
+        padding: 25px 20px;
+    }
+    
+    .pet-container {
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .status-bar {
+        min-width: 120px;
+    }
+    
+    .record-btn {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .mic-icon {
+        font-size: 2rem;
+    }
+    
+    /* Emotion History Mobile */
+    .emotion-item {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .emotion-emoji {
+        font-size: 1.5rem;
+        width: 40px;
+    }
+    
+    .confidence-score {
+        order: 3;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Practice Section Mobile */
+    .practice-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .practice-icon {
+        font-size: 2.5rem;
+        width: auto;
+    }
+    
+    /* Progress Cards Mobile */
+    .progress-cards {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 15px;
+    }
+    
+    .progress-card {
+        padding: 15px 10px;
+    }
+    
+    .card-content h4 {
+        font-size: 1.3rem;
+    }
+    
+    .card-content p {
+        font-size: 0.8rem;
+    }
+    
+    /* Modal Mobile */
+    .modal-content {
+        width: 95%;
+        padding: 25px 20px;
+    }
+    
+    .mic-pulse {
+        font-size: 3rem;
+    }
+    
+    .sound-waves {
+        height: 25px;
+    }
+    
+    .wave {
+        width: 3px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    
+    .cute-character {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .welcome-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 15px;
+        font-size: 1rem;
+    }
+    
+    .dashboard-main {
+        padding: 15px 10px;
+    }
+    
+    .welcome-banner h1 {
+        font-size: 1.5rem;
+    }
+    
+    .recording-section {
+        padding: 20px 15px;
+    }
+    
+    .pet-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .record-btn {
+        width: 90px;
+        height: 90px;
+        font-size: 0.9rem;
+    }
+    
+    .emotion-history, .practice-section, .daily-progress {
+        padding: 20px 15px;
+    }
+    
+    .progress-cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .progress-card {
+        padding: 12px 8px;
+    }
+    
+    .card-icon {
+        font-size: 1.5rem;
+    }
+    
+    .card-content h4 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Landscape Phone */
+@media (max-width: 768px) and (orientation: landscape) {
+    .recording-section {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .pet-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .dashboard-main {
+        padding: 15px;
+    }
+    
+    .welcome-banner {
+        margin-bottom: 20px;
+    }
+    
+    .welcome-banner h1 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+    
+    .welcome-banner p {
+        font-size: 0.9rem;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .cute-character, .cute-character-small {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: optimize-contrast;
+    }
+    
+    .record-btn {
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .btn-primary, .btn-secondary, .record-btn, .practice-btn {
+        min-height: 48px;
+        touch-action: manipulation;
+    }
+    
+    .nav-item {
+        min-height: 44px;
+        touch-action: manipulation;
+    }
+    
+    .emotion-item {
+        min-height: 60px;
+        touch-action: manipulation;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .btn-primary:hover, .btn-secondary:hover,
+    .record-btn:hover, .practice-btn:hover,
+    .nav-item:hover {
+        transform: none;
+    }
+    
+    /* Add active states for better touch feedback */
+    .btn-primary:active, .btn-secondary:active {
+        transform: scale(0.98);
+    }
+    
+    .record-btn:active {
+        transform: scale(0.95);
+    }
+    
+    .nav-item:active {
+        background: rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .pulse-ring, .bounce, .wave, .micPulse {
+        animation: none !important;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .modal-content {
+        background: rgba(30, 30, 30, 0.95);
+        color: white;
+    }
+    
+    .modal-header h3 {
+        color: white;
+    }
+    
+    .modal-body p {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .close-btn {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .close-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}

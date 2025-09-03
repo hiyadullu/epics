@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Helper Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/mobile.css">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="cute-character-small">
+                <div class="character-face">
+                    <div class="eyes">
+                        <div class="eye left"></div>
+                        <div class="eye right"></div>
+                    </div>
+                    <div class="mouth"></div>
+                </div>
+            </div>
+            <h3>Menu</h3>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-section="home">
+                <span class="icon">🏠</span>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item" data-section="progress">
+                <span class="icon">📊</span>
+                <span>Progress</span>
+            </a>
+            <a href="#" class="nav-item" data-section="caregiver">
+                <span class="icon">👥</span>
+                <span>Caregiver</span>
+            </a>
+            <a href="#" class="nav-item" data-section="settings">
+                <span class="icon">⚙️</span>
+                <span>Settings</span>
+            </a>
+            <a href="../index.html" class="nav-item logout">
+                <span class="icon">🚪</span>
+                <span>Log Out</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Top Header -->
+        <header class="top-header">
+            <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+            <nav class="top-nav">
+                <a href="#" class="top-nav-item active">Home</a>
+                <a href="#" class="top-nav-item">About Us</a>
+                <a href="#" class="top-nav-item">Caregiver</a>
+            </nav>
+            <div class="user-avatar">
+                <div class="avatar-circle">😊</div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <main class="dashboard-main">
+            <div class="welcome-banner">
+                <h1>Welcome back! Ready to practice?</h1>
+                <p>Let's learn emotions together today</p>
+            </div>
+
+            <!-- Main Recording Section -->
+            <div class="recording-section">
+                <div class="pet-companion">
+                    <div class="pet-container">
+                        <div class="cute-character">
+                            <div class="character-face">
+                                <div class="eyes">
+                                    <div class="eye left"></div>
+                                    <div class="eye right"></div>
+                                </div>
+                                <div class="mouth happy"></div>
+                                <div class="ears">
+                                    <div class="ear left"></div>
+                                    <div class="ear right"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pet-status">
+                            <div class="status-bar">
+                                <div class="bar happiness">
+                                    <label>Happiness</label>
+                                    <div class="bar-fill" style="width: 75%"></div>
+                                </div>
+                                <div class="bar practice">
+                                    <label>Practice</label>
+                                    <div class="bar-fill" style="width: 60%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recording-controls">
+                    <button class="record-btn" id="record-btn">
+                        <div class="mic-icon">🎤</div>
+                        <span>Record Now</span>
+                        <div class="pulse-ring"></div>
+                    </button>
+                    <p class="instruction">Tap to start recording and listen to emotions</p>
+                </div>
+            </div>
+
+            <!-- Emotion History -->
+            <div class="emotion-history" id="emotion-history">
+                <h3>Recent Emotions Detected</h3>
+                <div class="emotion-timeline">
+                    <div class="emotion-item">
+                        <div class="emotion-emoji">😊</div>
+                        <div class="emotion-info">
+                            <span class="emotion-name">Happy</span>
+                            <span class="emotion-time">2 minutes ago</span>
+                        </div>
+                        <div class="confidence-score">95%</div>
+                    </div>
+                    <div class="emotion-item">
+                        <div class="emotion-emoji">😢</div>
+                        <div class="emotion-info">
+                            <span class="emotion-name">Sad</span>
+                            <span class="emotion-time">5 minutes ago</span>
+                        </div>
+                        <div class="confidence-score">87%</div>
+                    </div>
+                    <div class="emotion-item">
+                        <div class="emotion-emoji">😠</div>
+                        <div class="emotion-info">
+                            <span class="emotion-name">Angry</span>
+                            <span class="emotion-time">8 minutes ago</span>
+                        </div>
+                        <div class="confidence-score">92%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practice Section -->
+            <div class="practice-section">
+                <div class="section-header">
+                    <h3>Practice Time!</h3>
+                    <p>Learn different emotions through fun exercises</p>
+                </div>
+                
+                <button class="practice-btn" id="practice-btn">
+                    <div class="practice-content">
+                        <div class="practice-icon">🎯</div>
+                        <div class="practice-text">
+                            <h4>Start Practice Session</h4>
+                            <p>Interactive lessons to recognize emotions</p>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Daily Progress -->
+            <div class="daily-progress">
+                <h3>Today's Progress</h3>
+                <div class="progress-cards">
+                    <div class="progress-card">
+                        <div class="card-icon">🎯</div>
+                        <div class="card-content">
+                            <h4>5</h4>
+                            <p>Emotions Learned</p>
+                        </div>
+                    </div>
+                    <div class="progress-card">
+                        <div class="card-icon">⏱️</div>
+                        <div class="card-content">
+                            <h4>12 min</h4>
+                            <p>Practice Time</p>
+                        </div>
+                    </div>
+                    <div class="progress-card">
+                        <div class="card-icon">🏆</div>
+                        <div class="card-content">
+                            <h4>85%</h4>
+                            <p>Accuracy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Recording Modal -->
+    <div class="modal" id="recording-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Recording...</h3>
+                <button class="close-btn" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="recording-animation">
+                    <div class="mic-pulse">🎤</div>
+                    <div class="sound-waves">
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                    </div>
+                </div>
+                <p>Say something and I'll detect the emotion!</p>
+                <button class="stop-recording-btn" id="stop-recording">Stop Recording</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/audio.js"></script>
+</body>
+</html>

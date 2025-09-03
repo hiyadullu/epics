@@ -1,0 +1,32 @@
+{
+  "name": "emotion-recognition-app",
+  "version": "1.0.0",
+  "description": "A web application to help neurodivergent individuals learn to recognize emotions in speech",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000 --open=/index.html",
+    "dev": "live-server --port=3000 --open=/index.html --watch=assets/",
+    "build": "echo 'Static site - no build needed'",
+    "serve": "python -m http.server 3000"
+  },
+  "keywords": [
+    "emotion-recognition",
+    "accessibility",
+    "neurodiversity",
+    "web-audio",
+    "education"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
+}

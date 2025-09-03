@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caregiver Dashboard - Emotion Helper</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/caregiver.css">
+    <link rel="stylesheet" href="../assets/css/mobile.css">
+</head>
+<body class="caregiver-page">
+    <!-- Header -->
+    <header class="caregiver-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="cute-character-small">
+                    <div class="character-face">
+                        <div class="eyes">
+                            <div class="eye left"></div>
+                            <div class="eye right"></div>
+                        </div>
+                        <div class="mouth"></div>
+                    </div>
+                </div>
+                <div class="logo-text">
+                    <h1>Caregiver Dashboard</h1>
+                    <p>Track progress and manage settings</p>
+                </div>
+            </div>
+            
+            <nav class="header-nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="dashboard.html" class="nav-link">Student View</a>
+                <button class="profile-btn" id="profile-btn">
+                    <div class="profile-avatar">👤</div>
+                    <span>Caregiver</span>
+                </button>
+            </nav>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="caregiver-main">
+        <!-- Quick Stats Overview -->
+        <section class="stats-overview">
+            <h2>📊 Progress Overview</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-content">
+                        <h3 id="total-sessions">24</h3>
+                        <p>Total Sessions</p>
+                        <span class="stat-change positive">+3 this week</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-content">
+                        <h3 id="total-time">2.5h</h3>
+                        <p>Practice Time</p>
+                        <span class="stat-change positive">+30min this week</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">🎉</div>
+                    <div class="stat-content">
+                        <h3 id="accuracy-rate">87%</h3>
+                        <p>Accuracy Rate</p>
+                        <span class="stat-change positive">+5% improvement</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">🔥</div>
+                    <div class="stat-content">
+                        <h3 id="streak-days">7</h3>
+                        <p>Day Streak</p>
+                        <span class="stat-change neutral">Keep it up!</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weekly Progress Chart -->
+        <section class="progress-chart-section">
+            <div class="section-header">
+                <h2>📈 Weekly Progress</h2>
+                <div class="chart-controls">
+                    <select id="chart-type">
+                        <option value="sessions">Sessions</option>
+                        <option value="accuracy">Accuracy</option>
+                        <option value="time">Practice Time</option>
+                    </select>
+                    <select id="time-period">
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                        <option value="all">All Time</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="progress-chart"></canvas>
+                <div class="chart-fallback" id="chart-fallback">
+                    <div class="simple-chart">
+                        <div class="chart-bars">
+                            <div class="bar" style="height: 60%"><span>Mon</span></div>
+                            <div class="bar" style="height: 80%"><span>Tue</span></div>
+                            <div class="bar" style="height: 45%"><span>Wed</span></div>
+                            <div class="bar" style="height: 90%"><span>Thu</span></div>
+                            <div class="bar" style="height: 75%"><span>Fri</span></div>
+                            <div class="bar" style="height: 85%"><span>Sat</span></div>
+                            <div class="bar" style="height: 95%"><span>Sun</span></div>
+                        </div>
+                        <div class="chart-legend">
+                            <span>Daily Practice Sessions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Analytics -->
+        <section class="detailed-analytics">
+            <div class="analytics-tabs">
+                <button class="tab-btn active" data-tab="emotions">Emotion Recognition</button>
+                <button class="tab-btn" data-tab="progress">Learning Progress</button>
+                <button class="tab-btn" data-tab="behavior">Behavior Patterns</button>
+            </div>
+
+            <div class="tab-content active" id="emotions-tab">
+                <div class="emotions-analysis">
+                    <div class="emotion-breakdown">
+                        <h3>Emotion Recognition Breakdown</h3>
+                        <div class="emotion-stats">
+                            <div class="emotion-stat">
+                                <div class="emotion-header">
+                                    <span class="emotion-emoji">😊</span>
+                                    <span class="emotion-name">Happy</span>
+                                </div>
+                                <div class="emotion-metrics">
+                                    <div class="accuracy-bar">
+                                        <div class="accuracy-fill" style="width: 92%"></div>
+                                        <span class="accuracy-text">92%</span>
+                                    </div>
+                                    <span class="attempts">24 attempts</span>
+                                </div>
+                            </div>
+                            
+                            <div class="emotion-stat">
+                                <div class="emotion-header">
+                                    <span class="emotion-emoji">😢</span>
+                                    <span class="emotion-name">Sad</span>
+                                </div>
+                                <div class="emotion-metrics">
+                                    <div class="accuracy-bar">
+                                        <div class="accuracy-fill" style="width: 78%"></div>
+                                        <span class="accuracy-text">78%</span>
+                                    </div>
+                                    <span class="attempts">18 attempts</span>
+                                </div>
+                            </div>
+                            
+                            <div class="emotion-stat">
+                                <div class="emotion-header">
+                                    <span class="emotion-emoji">😠</span>
+                                    <span class="emotion-name">Angry</span>
+                                </div>
+                                <div class="emotion-metrics">
+                                    <div class="accuracy-bar">
+                                        <div class="accuracy-fill" style="width: 85%"></div>
+                                        <span class="accuracy-text">85%</span>
+                                    </div>
+                                    <span class="attempts">16 attempts</span>
+                                </div>
+                            </div>
+                            
+                            <div class="emotion-stat">
+                                <div class="emotion-header">
+                                    <span class="emotion-emoji">😲</span>
+                                    <span class="emotion-name">Surprised</span>
+                                </div>
+                                <div class="emotion-metrics">
+                                    <div class="accuracy-bar">
+                                        <div class="accuracy-fill" style="width: 65%"></div>
+                                        <span class="accuracy-text">65%</span>
+                                    </div>
+                                    <span class="attempts">12 attempts</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recommendations">
+                        <h3>🎯 Recommendations</h3>
+                        <div class="recommendation-cards">
+                            <div class="recommendation-card">
+                                <div class="rec-icon">💡</div>
+                                <div class="rec-content">
+                                    <h4>Focus on Surprised Emotions</h4>
+                                    <p>Practice with more surprise audio samples to improve recognition</p>
+                                </div>
+                            </div>
+                            
+                            <div class="recommendation-card">
+                                <div class="rec-icon">📚</div>
+                                <div class="rec-content">
+                                    <h4>Increase Sad Emotion Practice</h4>
+                                    <p>More exposure to sad emotional expressions will help improve accuracy</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="progress-tab">
+                <div class="progress-analysis">
+                    <div class="learning-milestones">
+                        <h3>🏆 Learning Milestones</h3>
+                        <div class="milestone-timeline">
+                            <div class="milestone completed">
+                                <div class="milestone-marker">✅</div>
+                                <div class="milestone-content">
+                                    <h4>First Emotion Recognition</h4>
+                                    <p>Successfully identified first emotion</p>
+                                    <span class="milestone-date">2 weeks ago</span>
+                                </div>
+                            </div>
+                            
+                            <div class="milestone completed">
+                                <div class="milestone-marker">✅</div>
+                                <div class="milestone-content">
+                                    <h4>80% Accuracy Achieved</h4>
+                                    <p>Reached 80% overall accuracy rate</p>
+                                    <span class="milestone-date">1 week ago</span>
+                                </div>
+                            </div>
+                            
+                            <div class="milestone in-progress">
+                                <div class="milestone-marker">🎯</div>
+                                <div class="milestone-content">
+                                    <h4>7-Day Streak Goal</h4>
+                                    <p>Currently on day 7 of daily practice</p>
+                                    <span class="milestone-date">Today</span>
+                                </div>
+                            </div>
+                            
+                            <div class="milestone upcoming">
+                                <div class="milestone-marker">⏳</div>
+                                <div class="milestone-content">
+                                    <h4>90% Accuracy Goal</h4>
+                                    <p>Next milestone to achieve</p>
+                                    <span class="milestone-date">In progress</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-development">
+                        <h3>📈 Skill Development</h3>
+                        <div class="skill-bars">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span>Emotion Recognition Speed</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span>Confidence in Responses</span>
+                                    <span>78%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width: 78%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span>Practice Consistency</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="behavior-tab">
+                <div class="behavior-analysis">
+                    <div class="usage-patterns">
+                        <h3>⏰ Usage Patterns</h3>
+                        <div class="pattern-insights">
+                            <div class="insight-card">
+                                <h4>Best Practice Time</h4>
+                                <p class="insight-value">2:00 PM - 4:00 PM</p>
+                                <p>Highest accuracy rates during afternoon sessions</p>
+                            </div>
+                            
+                            <div class="insight-card">
+                                <h4>Average Session Length</h4>
+                                <p class="insight-value">12 minutes</p>
+                                <p>Optimal engagement without fatigue</p>
+                            </div>
+                            
+                            <div class="insight-card">
+                                <h4>Most Engaged Days</h4>
+                                <p class="insight-value">Tuesday, Thursday</p>
+                                <p>Consider scheduling extra practice on these days</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="behavioral-trends">
+                        <h3>📊 Behavioral Trends</h3>
+                        <div class="trend-items">
+                            <div class="trend-item positive">
+                                <span class="trend-icon">📈</span>
+                                <div class="trend-content">
+                                    <h4>Increasing Engagement</h4>
+                                    <p>Practice sessions have increased by 25% this month</p>
+                                </div>
+                            </div>
+                            
+                            <div class="trend-item neutral">
+                                <span class="trend-icon">⚖️</span>
+                                <div class="trend-content">
+                                    <h4>Consistent Performance</h4>
+                                    <p>Accuracy remains stable across different emotions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="trend-item attention">
+                                <span class="trend-icon">⚠️</span>
+                                <div class="trend-content">
+                                    <h4>Weekend Dip</h4>
+                                    <p>Practice time decreases on weekends - consider reminders</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <h2>⚡ Quick Actions</h2>
+            <div class="action-grid">
+                <button class="action-btn" onclick="exportProgress()">
+                    <div class="action-icon">📄</div>
+                    <span>Export Progress Report</span>
+                </button>
+                
+                <button class="action-btn" onclick="scheduleReminder()">
+                    <div class="action-icon">🔔</div>
+                    <span>Set Practice Reminder</span>
+                </button>
+                
+                <button class="action-btn" onclick="adjustSettings()">
+                    <div class="action-icon">⚙️</div>
+                    <span>Adjust Settings</span>
+                </button>
+                
+                <button class="action-btn" onclick="shareProgress()">
+                    <div class="action-icon">📤</div>
+                    <span>Share with Team</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Recent Activity Feed -->
+        <section class="activity-feed">
+            <h2>📋 Recent Activity</h2>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon success">✅</div>
+                    <div class="activity-content">
+                        <h4>Practice Session Completed</h4>
+                        <p>Identified 5 emotions with 90% accuracy</p>
+                        <span class="activity-time">2 hours ago</span>
+                    </div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-icon milestone">🎯</div>
+                    <div class="activity-content">
+                        <h4>Milestone Achieved</h4>
+                        <p>Reached 7-day practice streak!</p>
+                        <span class="activity-time">Today</span>
+                    </div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-icon improvement">📈</div>
+                    <div class="activity-content">
+                        <h4>Improvement Noted</h4>
+                        <p>Sad emotion recognition improved by 15%</p>
+                        <span class="activity-time">Yesterday</span>
+                    </div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-icon practice">🎵</div>
+                    <div class="activity-content">
+                        <h4>New Practice Type</h4>
+                        <p>Started surprised emotion exercises</p>
+                        <span class="activity-time">2 days ago</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="view-all-btn">View All Activity</button>
+        </section>
+    </main>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settings-modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>⚙️ Settings & Configuration</h3>
+                <button class="close-btn" onclick="closeModal('settings-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-sections">
+                    <div class="settings-section">
+                        <h4>👤 User Profile</h4>
+                        <div class="setting-item">
+                            <label for="user-name">Student Name</label>
+                            <input type="text" id="user-name" value="Student" class="setting-input">
+                        </div>
+                        <div class="setting-item">
+                            <label for="user-age">Age Group</label>
+                            <select id="user-age" class="setting-select">
+                                <option value="child">Child (5-12)</option>
+                                <option value="teen">Teen (13-17)</option>
+                                <option value="adult">Adult (18+)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <h4>🎯 Practice Settings</h4>
+                        <div class="setting-item">
+                            <label for="difficulty">Difficulty Level</label>
+                            <select id="difficulty" class="setting-select">
+                                <option value="easy">Easy</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="auto-advance" checked>
+                                Auto-advance to next emotion
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label for="session-length">Session Length</label>
+                            <select id="session-length" class="setting-select">
+                                <option value="5">5 minutes</option>
+                                <option value="10" selected>10 minutes</option>
+                                <option value="15">15 minutes</option>
+                                <option value="20">20 minutes</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <h4>🔔 Notifications</h4>
+                        <div class="setting-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="daily-reminder" checked>
+                                Daily practice reminders
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label for="reminder-time">Reminder Time</label>
+                            <input type="time" id="reminder-time" value="15:00" class="setting-input">
+                        </div>
+                        <div class="setting-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="progress-alerts" checked>
+                                Progress milestone alerts
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="settings-actions">
+                    <button class="btn-primary" onclick="saveSettings()">Save Settings</button>
+                    <button class="btn-secondary" onclick="resetSettings()">Reset to Defaults</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/caregiver.js"></script>
+</body>
+</html>
